@@ -15,25 +15,25 @@
     <section class="item-details section">
         <div class="container">
             <div class="top-area">
-                <div class="row">
+                <div class="row product-infor-main product-infor" id="product-infor-detail">
                     <div class="col-lg-6 col-md-12 col-12">
                         <div class="product-images">
                             <main id="gallery">
                                 <div class="main-img">
-                                    <img src="/temp/images/product/{{$product->thumb}}" id="current" alt="#">
+                                    <img class="thumb-product" src="/temp/images/product/{{$product->thumb}}" id="current" alt="#">
                                 </div>
                             </main>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12 col-12">
                         <div class="product-info">
-                            <h2 class="title">{{$product->Title}}</h2>
+                            <h2 class="title title-product">{{$product->Title}}</h2>
                             <p class="location"><i class="lni lni-map-marker"></i><a href="javascript:void(0)">Nghệ An</a></p>
                             @if($product->discount > 0)
                                 <h4 class="discount text-dark text-decoration-line-through">{{ number_format($product->price) }} VNĐ</h4>
-                                <h3 class="price">{{ number_format($product->discount) }} VNĐ</h3>
+                                <h3 class="price okPrice-product">{{ number_format($product->discount) }} VNĐ</h3>
                             @else
-                                <h3 class="price">{{ number_format($product->price) }} VNĐ</h3>
+                                <h3 class="price okPrice-product">{{ number_format($product->price) }} VNĐ</h3>
                             @endif
                             <h3 class="price"></h3>
                             <div class="list-info">
@@ -45,17 +45,17 @@
                             <div class="contact-info">
                                 <ul>
                                     <li>
-                                        <form id="product_details" action="" method="post" href="" class="d-flex form-add-to-cart">
+                                        <div class="d-flex form-add-to-cart" id="form-add-to-cart-details">
                                             <div class="number me-3">
-                                                <button type="button" id="decreaseButton">-</button>
-                                                <input name="quanity" type="number" inputmode="numeric" id="numberInput" value="0" min="0">
-                                                <button type="button" id="increaseButton">+</button>
+                                                <button type="button " class="decreaseButton" id="decreaseButton">-</button>
+                                                <input name="quanity" class="quantity numberInput" type="number" inputmode="numeric" id="numberInput" value="0" min="0">
+                                                <button type="button " class="increaseButton" id="increaseButton">+</button>
                                             </div>
-                                            <button class="btn rounded-2 call  d-flex align-items-center px-3 py-2">
+                                            <a href="" data-user-id="{{ Auth::id() }}" data-product-id="{{$product->id}}" class="btn rounded-2 add-to-cart call d-flex align-items-center px-3 py-2">
                                                 <svg style="width: 24px; height: 24px" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#e6e6e6" viewBox="0 0 256 256"><path d="M96,216a16,16,0,1,1-16-16A16,16,0,0,1,96,216Zm88-16a16,16,0,1,0,16,16A16,16,0,0,0,184,200ZM230.44,67.25A8,8,0,0,0,224,64H48.32L40.21,35.6A16.08,16.08,0,0,0,24.82,24H8A8,8,0,0,0,8,40H24.82L61,166.59A24.11,24.11,0,0,0,84.07,184h96.11a23.89,23.89,0,0,0,22.94-16.94l28.53-92.71A8,8,0,0,0,230.44,67.25Z"></path></svg>
                                                 <span class="ms-2 fw-bold fs-6">Thêm vào giỏ</span>
-                                            </button>
-                                        </form>
+                                            </a>
+                                        </div>
                                     </li>
                                 </ul>
                             </div>

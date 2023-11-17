@@ -50,7 +50,11 @@ class MainProductController extends Controller
             $cart->quanity = $quantity;
             $cart->subtotal =$subtotal;
             $cart->save();
-            return response()->json(['success' => true, 'message' => 'Thêm giỏ hàng thành công!']);
+        }else{
+            $existingRecord->quanity =  $existingRecord->quanity + $quantity;
+            $existingRecord->subtotal =  $existingRecord->subtotal * $existingRecord->quanity;
+            $existingRecord->save();
         }
+        return response()->json(['success' => true, 'message' => 'Thêm giỏ hàng thành công!']);
     }
 }

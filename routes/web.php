@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\MainPostController;
 use App\Http\Controllers\MainProductController;
+use App\Http\Controllers\MainCartController;
 use App\Http\Controllers\admin\HomeController;
 use App\Http\Controllers\admin\UsersController;
 use App\Http\Controllers\admin\CategoryController;
@@ -37,6 +38,16 @@ Route::get('/products/details/{slug}', [MainProductController::class, 'ProductDe
 
 // Thêm vào giỏ hàng
 Route::post('/addToCart',[MainProductController::class,'addToCart']);
+
+// Giỏ hàng
+Route::get('/carts', [MainCartController::class, 'cart'])->name('carts.index');
+
+// Xóa sản phẩm ở  giỏ hàng
+Route::delete('/carts/{id}', [MainCartController::class,'destroy'])->name('carts.destroy');
+
+// Cập nhật sản phẩm ở giỏ
+Route::post('/carts/updateQuantities', [MainCartController::class, 'updateQuantities'])->name('carts.updateQuantities');
+
 Auth::routes();
 
 // Đăng nhập

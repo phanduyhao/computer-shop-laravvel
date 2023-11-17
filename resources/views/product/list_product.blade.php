@@ -143,11 +143,14 @@
                                     <div class="row">
                                         @if(count($products) > 0)
                                             @foreach($products as $product)
-                                                <div class="col-lg-4 col-md-6 col-12">
+                                                <div class="col-lg-4 col-md-6 col-12 product-infor-main" id="product-infor-grid-{{$product->id}}">
+                                                    <input type="number" hidden class="quantity" value="1">
                                                     <!-- Start Single Item -->
                                                     <div class="single-item-grid">
                                                         <div class="image">
-                                                            <a href="{{ route('products.details', ['slug' =>$product->slug]) }}"><img src="/temp/images/product/{{$product->thumb}}" alt="{{$product->title}}"></a>
+                                                            <a href="{{ route('products.details', ['slug' =>$product->slug]) }}">
+                                                                <img class="thumb-product" src="/temp/images/product/{{$product->thumb}}" alt="{{$product->title}}">
+                                                            </a>
                                                             <i class=" cross-badge lni lni-bolt"></i>
                                                             @if($product->discount > 0)
                                                                 <span class="flat-badge sale">Sale</span>
@@ -156,16 +159,16 @@
                                                         <div class="content">
                                                             <a href="javascript:void(0)" class="tag">{{$category->title}}</a>
                                                             <h3 class="title">
-                                                                <a href="{{ route('products.details', ['slug' =>$product->slug]) }}">{{$product->Title}}</a>
+                                                                <a class="title-product" href="{{ route('products.details', ['slug' =>$product->slug]) }}">{{$product->Title}}</a>
                                                             </h3>
                                                             <p class="location"><a href="javascript:void(0)"><i class="lni lni-map-marker">
                                                                     </i>Nghệ An</a></p>
                                                             <ul class="info">
                                                                 @if($product->discount > 0)
                                                                     <li class="discount text-dark text-decoration-line-through">{{ number_format($product->price) }} VNĐ</li>
-                                                                    <li class="price">{{ number_format($product->discount) }} VNĐ</li>
+                                                                    <li class="price okPrice-product">{{ number_format($product->discount) }} VNĐ</li>
                                                                 @else
-                                                                    <li class="price">{{ number_format($product->price) }} VNĐ</li>
+                                                                    <li class="price okPrice-product">{{ number_format($product->price) }} VNĐ</li>
                                                                 @endif
                                                                 <li class="like">
                                                                     <a data-user-id="{{ Auth::id() }}" data-product-id="{{$product->id}}" href="javascript:void(0)" class="add-to-cart">
@@ -197,13 +200,16 @@
                                     <div class="row">
                                      @if(count($products) > 0)
                                         @foreach($products as $product)
-                                            <div class="col-lg-12 col-md-12 col-12">
+                                            <div class="col-lg-12 col-md-12 col-12 product-infor-main" id="product-infor-list-{{$product->id}}">
+                                                <input type="number" hidden class="quantity" value="1">
                                                 <!-- Start Single Item -->
                                                 <div class="single-item-grid">
                                                     <div class="row align-items-center">
                                                         <div class="col-lg-5 col-md-7 col-12">
                                                             <div class="image">
-                                                                <a href="{{ route('products.details', ['slug' =>$product->slug]) }}"><img src="/temp/images/product/{{$product->thumb}}" alt="{{$product->Title}}"></a>
+                                                                <a href="{{ route('products.details', ['slug' =>$product->slug]) }}">
+                                                                    <img class="thumb-product" src="/temp/images/product/{{$product->thumb}}" alt="{{$product->Title}}">
+                                                                </a>
                                                                 <i class=" cross-badge lni lni-bolt"></i>
                                                                 <span class="flat-badge sale">Sale</span>
                                                             </div>
@@ -212,16 +218,16 @@
                                                             <div class="content">
                                                                 <a href="javascript:void(0)" class="tag">{{$category->title}}</a>
                                                                 <h3 class="title">
-                                                                    <a href="{{ route('products.details', ['slug' =>$product->slug]) }}">{{$product->Title}}</a>
+                                                                    <a class="title-product" href="{{ route('products.details', ['slug' =>$product->slug]) }}">{{$product->Title}}</a>
                                                                 </h3>
                                                                 <p class="location"><a href="javascript:void(0)"><i class="lni lni-map-marker">
                                                                         </i>Nghệ An</a></p>
                                                                 <ul class="info">
                                                                     @if($product->discount > 0)
                                                                         <li class="discount text-dark text-decoration-line-through">{{ number_format($product->price) }} VNĐ</li>
-                                                                        <li class="price">{{ number_format($product->discount) }} VNĐ</li>
+                                                                        <li class="price okPrice-product">{{ number_format($product->discount) }} VNĐ</li>
                                                                     @else
-                                                                        <li class="price">{{ number_format($product->price) }} VNĐ</li>
+                                                                        <li class="price okPrice-product">{{ number_format($product->price) }} VNĐ</li>
                                                                     @endif
                                                                     <li class="like">
                                                                         <a data-user-id="{{ Auth::id() }}" data-product-id="{{$product->id}}" href="javascript:void(0)" class="add-to-cart">

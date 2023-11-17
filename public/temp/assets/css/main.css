@@ -8611,11 +8611,11 @@ blockquote .shape {
     width: 100% !important;
 }
 
-#product_details .number {
+.product-infor .number {
     width: max-content;
     border: 1px solid #D6D8DB;
     border-radius: 3px; }
-#product_details #numberInput {
+.product-infor .numberInput {
     width: 50px;
     text-align: center;
     height: 45px;
@@ -8623,9 +8623,9 @@ blockquote .shape {
     border-bottom: 0;
     border-left: 1px solid #D6D8DB;
     border-right: 1px solid #D6D8DB; }
-#product_details #numberInput:focus {
+.product-infor .numberInput:focus {
     outline: none; }
-#product_details #decreaseButton, #product_details #increaseButton {
+.product-infor .decreaseButton, .product-infor .increaseButton {
     width: 30px;
     font-size: 35px;
     height: 45px;
@@ -8633,11 +8633,11 @@ blockquote .shape {
     border: 0;
     color: #D6D8DB;
     background: none; }
-#product_details #increaseButton {
+.product-infor .increaseButton {
     font-size: 25px;
     margin-left: -5px;
     padding-bottom: 5px; }
-#product_details #decreaseButton {
+.product-infor .decreaseButton {
     margin-top: -13px;
     margin-right: -5px;
     padding-bottom: 47px; }
