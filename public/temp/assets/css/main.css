@@ -8649,3 +8649,9 @@ input[type="number"]::-webkit-outer-spin-button {
 .thongsokythuat img{
     width: 100% !important;
 }
+.toast-success{
+    background-color:#198754 !important;
+}
+.toast-error{
+    background-color:#dc3545 !important;
+}

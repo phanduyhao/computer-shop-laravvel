@@ -8,10 +8,10 @@
         "Create Storage image": "php artisan storage:link",
         "makeController": "php artisan make:controller MainProductController ",
         "makeController Full Class": "php artisan make:controller Document --resource",
-        "makeModel-Controller-Migration": "php artisan make:model Post -mcr",
+        "makeModel-Controller-Migration": "php artisan make:model Cart -mcr",
         "RunPHPCommand": " php artisan tinker ",
         "CreatePass": "echo bcrypt('12345')",
-        "CreateMigration": "php artisan make:migration updateproduct",
+        "CreateMigration": "php artisan make:migration updatecart",
         "makeMigration": "php artisan migrate",
         "makeOnlyMigration": "php artisan migrate --path=database/migrations/2023_11_15_072247_updateproduct.php",
         "makeFormRequest": "php artisan make:request Menu/CreateFormRequest",
@@ -27,5 +27,8 @@
         "laravel-vite-plugin": "^0.8.0",
         "sass": "^1.56.1",
         "vite": "^4.0.0"
+    },
+    "dependencies": {
+        "toastr": "^2.1.4"
     }
 }

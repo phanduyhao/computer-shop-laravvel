@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
+    protected $table ='products';
+
     protected $casts = [
         'created_at' => 'datetime:d/m/Y', // Định dạng ngày tháng năm
     ];

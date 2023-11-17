@@ -35,6 +35,8 @@ Route::get('/products/{categorySlug}', [MainProductController::class, 'ShowProdu
 // Chi tiết sản phẩm
 Route::get('/products/details/{slug}', [MainProductController::class, 'ProductDetail'])->name('products.details');
 
+// Thêm vào giỏ hàng
+Route::post('/addToCart',[MainProductController::class,'addToCart']);
 Auth::routes();
 
 // Đăng nhập

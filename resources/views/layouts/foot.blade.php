@@ -1,19 +1,5 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $("#decreaseButton").on("click", function() {
-            var currentValue = parseInt($("#numberInput").val(), 10);
-            if (currentValue > 0) {
-                $("#numberInput").val(currentValue - 1);
-            }
-        });
-        $("#increaseButton").on("click", function() {
-            var currentValue = parseInt($("#numberInput").val(), 10);
-            $("#numberInput").val(currentValue + 1);
-        });
-    });
-</script>
 <script src="/temp/build/js/main.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="/temp/assets/js/bootstrap.min.js"></script>
 <script src="/temp/assets/js/wow.min.js"></script>
 <script src="/temp/assets/js/tiny-slider.js"></script>
@@ -51,3 +37,4 @@
         }
     });
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
