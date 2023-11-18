@@ -6,7 +6,7 @@
         "build": "vite build",
         "run": "php artisan serve",
         "Create Storage image": "php artisan storage:link",
-        "makeController": "php artisan make:controller MainCartController ",
+        "makeController": "php artisan make:controller MainCheckoutController ",
         "makeController Full Class": "php artisan make:controller Document --resource",
         "makeModel-Controller-Migration": "php artisan make:model Cart -mcr",
         "RunPHPCommand": " php artisan tinker ",

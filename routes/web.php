@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\MainPostController;
 use App\Http\Controllers\MainProductController;
 use App\Http\Controllers\MainCartController;
+use App\Http\Controllers\MainCheckoutController;
 use App\Http\Controllers\admin\HomeController;
 use App\Http\Controllers\admin\UsersController;
 use App\Http\Controllers\admin\CategoryController;
@@ -47,6 +48,12 @@ Route::delete('/carts/{id}', [MainCartController::class,'destroy'])->name('carts
 
 // Cập nhật sản phẩm ở giỏ
 Route::post('/carts/updateQuantities', [MainCartController::class, 'updateQuantities'])->name('carts.updateQuantities');
+
+// Check out đưa các thông tin sản phẩm vào Session
+Route::post('/buyProduct', [MainCheckoutController::class, 'buyProduct'])->name('checkout.buyProduct');
+
+// Chuyển sang trang checkout
+Route::get('/checkout', [MainCheckoutController::class, 'ShowToCheckout'])->name('checkout.showcheckout');
 
 Auth::routes();
 

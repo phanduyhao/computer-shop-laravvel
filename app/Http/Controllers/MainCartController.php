@@ -25,7 +25,6 @@ class MainCartController extends Controller
     public function updateQuantities(Request $request)
     {
         $cartUpdates = $request->input('cart_updates');
-
         foreach ($cartUpdates as $cartUpdate) {
             $cart = Cart::findOrFail($cartUpdate['id']);
             $cart->quanity = $cartUpdate['quantity'];

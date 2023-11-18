@@ -108,5 +108,44 @@ $(document).ready(function () {
     });
 });
 
+// Checkout
+$(document).ready(function () {
+    $('#buy-products').on('click', function (e) {
+        e.preventDefault();
 
+        // Create an array to store product information
+        var products = [];
+
+        // Iterate over each cart item
+        $('.single-item-list').each(function () {
+            var product = {
+                'thumb': $(this).find('.thumb-product').attr('src'),
+                'title': $(this).find('.title-product').text(),
+                'price': $(this).find('.price-product').text(),
+                'quantity': $(this).find('.quantity').val(),
+                'subtotal': $(this).find('.subtotal').text(),
+            };
+
+            // Add the product to the array
+            products.push(product);
+        });
+
+        // Send the product information to the server using AJAX
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            type: 'POST',
+            url: '/buyProduct', // Change this to the actual route handling the purchase
+            data: { products: products },
+            success: function (response) {
+                // Redirect to the checkout page
+                window.location.href = '/checkout';
+            },
+            error: function (error) {
+                console.error('Error:', error);
+            }
+        });
+    });
+});
 
