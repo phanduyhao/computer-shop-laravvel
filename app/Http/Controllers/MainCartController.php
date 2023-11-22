@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MainCartController extends Controller
 {
     public function cart(){
-        $carts = Cart::paginate(10);
+        $carts = Cart::where('user_id',Auth::id())->paginate(10);
         return view('cart.index',compact('carts'),[
             'title' => 'Giỏ hàng'
         ]);

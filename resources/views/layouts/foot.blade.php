@@ -1,4 +1,5 @@
 <script src="/temp/build/js/main.min.js"></script>
+<script src="/temp/build/js/validate.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="/temp/assets/js/bootstrap.min.js"></script>
 <script src="/temp/assets/js/wow.min.js"></script>

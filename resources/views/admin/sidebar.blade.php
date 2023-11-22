@@ -92,105 +92,36 @@
             </ul>
         </li>
         <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">Actions</span>
+            <span class="menu-header-text">Orthers</span>
         </li>
         <li class='menu-item'>
-            <a href='javascript:void(0);' class='menu-link menu-toggle'>
-                <i class='menu-icon tf-icons bx bx-comment-detail'></i>
-                <div data-i18n='Layouts'>Quản lý bình luận</div>
-            </a>
-            <ul class='menu-sub'>
-                <li class='menu-item'>
-                    <a href='' class='menu-link'>
-                        <div data-i18n='Without menu'>Danh sách bình luận</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li class='menu-item'>
-            <a href='javascript:void(0);' class='menu-link menu-toggle'>
-                <i class='menu-icon tf-icons bx bx-heart'></i>
-                <div data-i18n='Layouts'>Quản lý yêu thích</div>
-            </a>
-            <ul class='menu-sub'>
-                <li class='menu-item'>
-                    <a href='' class='menu-link'>
-                        <div data-i18n='Without menu'>Danh sách yêu thích</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li class='menu-item'>
-            <a href='javascript:void(0);' class='menu-link menu-toggle'>
-                <i class='menu-icon tf-icons bx bx-star'></i>
-                <div data-i18n='Layouts'>Quản lý đánh giá</div>
-            </a>
-            <ul class='menu-sub'>
-                <li class='menu-item'>
-                    <a href='' class='menu-link'>
-                        <div data-i18n='Without menu'>Danh sách đánh giá</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li class='menu-item'>
-            <a href='javascript:void(0);' class='menu-link menu-toggle'>
-                <i class='menu-icon tf-icons bx bx-downvote'></i>
-                <div data-i18n='Layouts'>Quản lý tải xuống</div>
-            </a>
-            <ul class='menu-sub'>
-                <li class='menu-item'>
-                    <a href='' class='menu-link'>
-                        <div data-i18n='Without menu'>Thống kê lượt tải tài liệu</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li class='menu-item'>
-            <a href='javascript:void(0);' class='menu-link menu-toggle'>
+            <a href='' class='menu-link menu-toggle'>
                 <i class='menu-icon tf-icons bx bx-street-view'></i>
-                <div data-i18n='Layouts'>Quản lý lượt xem</div>
+                <div data-i18n='Layouts'>Quản lý địa chỉ</div>
             </a>
             <ul class='menu-sub'>
                 <li class='menu-item'>
-                    <a href='' class='menu-link'>
-                        <div data-i18n='Without menu'>Thống kê lượt xem tài liệu</div>
+                    <a href='{{route('addresses.index')}}' class='menu-link'>
+                        <div data-i18n='Without menu'>Danh sách địa chỉ</div>
                     </a>
                 </li>
+
             </ul>
         </li>
-        <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">Components</span>
-        </li>
-        <!-- Layouts -->
         <li class='menu-item'>
             <a href='javascript:void(0);' class='menu-link menu-toggle'>
                 <i class='menu-icon tf-icons bx bx-food-menu'></i>
-                <div data-i18n='Layouts'>Quản lý Menu</div>
+                <div data-i18n='Layouts'>Quản lý đơn hàng</div>
             </a>
             <ul class='menu-sub'>
                 <li class='menu-item'>
-                    <a href='' class='menu-link'>
-                        <div data-i18n='Without menu'>Danh sách Menu</div>
+                    <a href='{{route('orders.index')}}' class='menu-link'>
+                        <div data-i18n='Without menu'>Danh sách đơn hàng</div>
                     </a>
                 </li>
+
             </ul>
         </li>
-        <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">Settings</span>
-        </li>
-        <li class='menu-item'>
-            <a href='javascript:void(0);' class='menu-link menu-toggle'>
-                <i class='menu-icon tf-icons bx bx-cog'></i>
-                <div data-i18n='Layouts'>Thiết lập</div>
-            </a>
-            <ul class='menu-sub'>
-                <li class='menu-item'>
-                    <a href='' class='menu-link'>
-                        <div data-i18n='Without menu'>Cài đặt điểm</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
+
     </ul>
 </aside>

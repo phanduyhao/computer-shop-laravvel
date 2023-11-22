@@ -10,11 +10,14 @@ use App\Http\Controllers\MainPostController;
 use App\Http\Controllers\MainProductController;
 use App\Http\Controllers\MainCartController;
 use App\Http\Controllers\MainCheckoutController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\admin\HomeController;
 use App\Http\Controllers\admin\UsersController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\PostController;
+use App\Http\Controllers\admin\AddressController;
+use App\Http\Controllers\admin\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,11 +52,14 @@ Route::delete('/carts/{id}', [MainCartController::class,'destroy'])->name('carts
 // Cập nhật sản phẩm ở giỏ
 Route::post('/carts/updateQuantities', [MainCartController::class, 'updateQuantities'])->name('carts.updateQuantities');
 
-// Check out đưa các thông tin sản phẩm vào Session
-Route::post('/buyProduct', [MainCheckoutController::class, 'buyProduct'])->name('checkout.buyProduct');
-
 // Chuyển sang trang checkout
 Route::get('/checkout', [MainCheckoutController::class, 'ShowToCheckout'])->name('checkout.showcheckout');
+
+// Thực hiện thanh toán
+Route::post('/process-checkout', [MainCheckoutController::class, 'checkout'])->name('checkout.checkout');
+
+// Thanh toán thành công
+Route::get('/checkout-success', [MainCheckoutController::class, 'showOrder'])->name('checkout.success');
 
 Auth::routes();
 
@@ -62,6 +68,9 @@ Route::get('/login',[LoginController::class,'showLoginForm'])->name('login');
 Route::get('/register',[RegisterController::class,'showRegistrationForm'])->name('register');
 
 // Bài viết
+Route::get('/about',[PageController::class,'about']);
+Route::get('/contact',[PageController::class,'contact']);
+
 
 // Admin
 Route::middleware(['auth', 'checkLevel'])->group(function() {
@@ -89,5 +98,12 @@ Route::middleware(['auth', 'checkLevel'])->group(function() {
         Route::resource('posts', PostController::class);
         Route::delete('/posts/{id}', [PostController::class,'destroy'])->name('posts.destroy');
         Route::post('posts/delete-all', [PostController::class,'deleteAllPosts'])->name('deleteAllPost');
+
+        //        Address
+        Route::resource('addresses', AddressController::class);
+
+        //        Orders
+        Route::resource('orders', OrderController::class);
+
     });
 });

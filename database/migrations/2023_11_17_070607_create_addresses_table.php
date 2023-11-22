@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('addresses', function (Blueprint $table) {
             $table->id();
+            $table->text('sdt',10);
+            $table->text('name',255);
             $table->string('Country',255);
             $table->string('province',255);
             $table->string('district',255);

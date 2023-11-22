@@ -15,7 +15,7 @@ $('body form').on('click', function(e) {
 
     // --------------------------- COMMENT ------------------------ //
 
-    $('#comment_area form button[type="submit"]').on('click', function(e){
+    $(' form button[type="submit"]').on('click', function(e){
         e.preventDefault();
         let form = $(this).closest('form');
         let formID = form.attr('id');
